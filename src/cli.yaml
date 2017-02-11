@@ -1,0 +1,14 @@
+name: letters
+version: "1.0.0"
+author: Bjorn Tipling <bjorn@ambientchill.com>
+about: Plays rock paper sissors
+args:
+    - verbose:
+        short: v
+        long: verbose
+        help: Print additional information during search. Use -vv for extra verbose debug information.
+        multiple: true
+    - colors:
+        short: c
+        long: colors
+        help: Print colors.
