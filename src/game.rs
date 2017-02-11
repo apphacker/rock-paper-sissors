@@ -28,7 +28,6 @@ pub fn run (options: &super::Options) {
     let ai_choice = GamePiece::from_i32(between.ind_sample(&mut rng));
     println!("I picked {}.", ai_choice);
 
-
     let player_piece = player_choice.to_piece().expect("Try again with a valid piece, options 1 - 3");
     let ai_choice = ai_choice.to_piece().unwrap();
     let result = player_piece.fights(&ai_choice.as_ref().to_game_piece());
