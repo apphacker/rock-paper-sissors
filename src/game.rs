@@ -33,9 +33,9 @@ pub fn run (options: &super::Options) {
             println!("Try again with a valid piece, options 1 - 3");
             return;
         }
-
     };
     let ai_choice = ai_choice.to_piece().unwrap();
+
     let result = player_piece.fights(&ai_choice.as_ref().to_game_piece());
 
     match result {
