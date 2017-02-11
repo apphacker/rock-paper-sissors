@@ -8,7 +8,6 @@ use rand;
 use rand::distributions::{IndependentSample, Range};
 
 pub fn run (options: &super::Options) {
-    vv(format!("Picking something"), options);
     println!("Pick an option: 1) Rock, 2) Paper, 3) Scissors.");
     let stdin = io::stdin();
     let mut player_choice = DEFAULT_PIECE;
@@ -20,7 +19,7 @@ pub fn run (options: &super::Options) {
             .unwrap_or(DEFAULT_PIECE.to_i32()));
         break;
     }
-    vv(format!("Something was picked something {}", player_choice), options);
+
     println!("You picked {}!", player_choice);
 
     let mut rng = rand::thread_rng();
@@ -36,6 +35,6 @@ pub fn run (options: &super::Options) {
         Outcome::Wins => println!("You won!"),
         Outcome::Loses => println!("You lost!"),
         Outcome::Ties => println!("It was a tie!"),
-        _ => (),
+        _ => vv(format!("Something went wrong"), options),
     }
 }
